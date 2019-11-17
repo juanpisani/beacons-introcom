@@ -1,0 +1,22 @@
+server:
+  port: 8071
+
+
+spring:
+  application:
+    name: beacon-service
+
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/introcom_beacons
+    username: root
+    password: password
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8069/eureka/
+debug: true

@@ -1,0 +1,22 @@
+server:
+  port: 8070
+
+spring:
+  application:
+    name: proxy-service
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8069/eureka/
+
+
+zuul:
+  routes:
+    beacon:
+      path: /beacon/**
+      service-id: beacon-service
+    poi:
+      path: /poi/**
+      service-id: poi-service
+debug: true
