@@ -17,6 +17,15 @@ public class Beacon {
 
     private int minor;
 
+    public Beacon() {
+    }
+
+    public Beacon(String UUID, int major, int minor) {
+        this.UUID = UUID;
+        this.major = major;
+        this.minor = minor;
+    }
+
     public Long getId() {
         return id;
     }

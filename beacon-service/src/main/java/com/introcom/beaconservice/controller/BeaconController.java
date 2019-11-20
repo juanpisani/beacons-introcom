@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/beacon")
+@RequestMapping("/")
 @CrossOrigin(methods = {
         RequestMethod.POST,
         RequestMethod.GET,
@@ -35,6 +35,11 @@ public class BeaconController {
     @GetMapping("/{beaconId}")
     public ResponseEntity<Beacon> getBeacon(@PathVariable Long beaconId){
         return beaconService.getBeaconById(beaconId).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
+    }
+
+    @GetMapping("{uuid}/{major}/{minor}")
+    public Beacon getByThings(@PathVariable String uuid, @PathVariable Integer major, @PathVariable Integer minor){
+        return beaconService.getBy(uuid, major, minor);
     }
 
     @DeleteMapping("/{beaconId}")

@@ -1,0 +1,20 @@
+server:
+  port: 8073
+
+
+spring:
+  application:
+    name: message-service
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 160000000
+        readTimeout: 160000000
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8069/eureka/
+debug: true

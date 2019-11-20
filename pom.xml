@@ -21,5 +21,9 @@
 		<module>
 			poi-service
 		</module>
+        <module>
+            messages-service
+        </module>
 	</modules>
+
 </project>

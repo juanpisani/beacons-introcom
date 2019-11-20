@@ -16,7 +16,11 @@ zuul:
     beacon:
       path: /beacon/**
       service-id: beacon-service
+    message:
+      path: /message/**
+      service-id: message-service
     poi:
       path: /poi/**
       service-id: poi-service
+
 debug: true

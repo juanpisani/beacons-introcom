@@ -1,4 +1,4 @@
-package com.introcom.poiservice.model;
+package com.introcom.poiservice.model.external;
 
 public class Beacon {
 

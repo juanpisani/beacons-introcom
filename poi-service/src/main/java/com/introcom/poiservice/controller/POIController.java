@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/poi")
+@RequestMapping("/")
 @CrossOrigin(methods = {
         RequestMethod.POST,
         RequestMethod.GET,
@@ -50,5 +50,12 @@ public class POIController {
     @PutMapping("")
     public ResponseEntity<POI> modifyPOI(@RequestBody POI poi){
         return poiService.modifyPOI(poi).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
+    }
+
+    @GetMapping("current/{phoneId}")
+    public ResponseEntity getCurrentPOI(@PathVariable String phoneId){
+        return poiService.getCurrennt(phoneId)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.badRequest().build());
     }
 }

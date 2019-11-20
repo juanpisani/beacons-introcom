@@ -15,6 +15,9 @@ public class BeaconService {
     BeaconRepository beaconRepository;
 
     public Beacon addBeacon(Beacon beacon){
+        if (beaconRepository.existsByUUIDAndMajorAndMinor(beacon.getUUID(), beacon.getMajor(), beacon.getMinor())){
+            throw new RuntimeException("El beacon ya existe");
+        }
         return beaconRepository.save(beacon);
     }
 
@@ -42,5 +45,9 @@ public class BeaconService {
             return Optional.of(beaconRepository.save(newBeacon));
         }
         return Optional.empty();
+    }
+
+    public Beacon getBy(String uuid, Integer major, Integer minor) {
+        return beaconRepository.findByUUIDAndMinorAndMajor(uuid, major,minor);
     }
 }
