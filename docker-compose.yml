@@ -1,0 +1,56 @@
+version: "3"
+
+services:
+
+  database:
+    image: mongo
+    container_name: mongo-container
+    volumes:
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+      - ./mongo-volume:/data/db
+    ports:
+      - '27017:27017'
+
+  discovery-service:
+    build:
+      context: discovery-service
+      dockerfile: ./Dockerfile
+    ports:
+      - 8069:8069
+
+  proxy-service:
+    build:
+      context: proxy-service
+      dockerfile: ./Dockerfile
+    ports:
+      - 8070:8070
+    depends_on:
+      - discovery-service
+
+  beacon-service:
+    build:
+      context: beacon-service
+      dockerfile: ./Dockerfile
+    ports:
+      - 8071:8071
+    depends_on:
+      - proxy-service
+
+  poi-service:
+    build:
+      context: poi-service
+      dockerfile: ./Dockerfile
+    ports:
+      - 8072:8072
+    depends_on:
+      - proxy-service
+
+  messages-service:
+    build:
+      context: messages-service
+      dockerfile: ./Dockerfile
+    ports:
+      - 8073:8073
+    depends_on:
+      - proxy-service
+

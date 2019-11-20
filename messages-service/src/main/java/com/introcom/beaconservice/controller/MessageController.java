@@ -28,6 +28,8 @@ public class MessageController {
     /**
      * Creates new Message in db
      *
+     * Messages saved represents the event corresponding with a phone detecting a beacon.
+     *
      * @param uuid beacon identifier corresponding to message
      * @param major beacon identifier corresponding to message
      * @param minor beacon identifier corresponding to message
@@ -42,7 +44,7 @@ public class MessageController {
     /**
      * Retrieve all messages stored
      *
-     * @return List of all Messages
+     * @return List of all messages
      */
     @GetMapping("")
     public List<Message> getAll(){

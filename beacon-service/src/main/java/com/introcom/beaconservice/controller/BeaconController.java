@@ -55,7 +55,7 @@ public class BeaconController {
     }
 
     /**
-     * Get Beacon by its specific parameters like, uuid, major, minor
+     * Get Beacon by its specific parameters: uuid, major, minor
      *
      * @param uuid Beacon identifier
      * @param major Beacon identifier

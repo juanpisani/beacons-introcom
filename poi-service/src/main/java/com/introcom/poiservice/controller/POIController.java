@@ -27,7 +27,7 @@ public class POIController {
      * Generate new poi
      *
      * @param poi poi object to be created
-     * @return Response enttity with new poi
+     * @return Response entity with new poi
      */
     @PostMapping("")
     public ResponseEntity<POI> addPOI(@RequestBody POI poi){
@@ -83,6 +83,12 @@ public class POIController {
 
     /**
      * Get phone current poi
+     *
+     * This endpoint relies on two different requests perpetrated to two other services in the platfomor.
+     * Firstly, the messages-service is asked for the last message to be sent by the specified phone
+     * Secondly, the beacon-service is asked for the beacon corresponding to that message
+     * Finally, this services looks in the database for the poi corresponding to
+     *  the beacon and returns it if present.
      *
      * @param phoneId phone pk identifier
      * @return Resoinse entity code 200 if ok 400 otherwise
