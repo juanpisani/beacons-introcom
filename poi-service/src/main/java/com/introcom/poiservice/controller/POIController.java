@@ -23,21 +23,44 @@ public class POIController {
     @Autowired
     POIService poiService;
 
+    /**
+     * Generate new poi
+     *
+     * @param poi poi object to be created
+     * @return Response enttity with new poi
+     */
     @PostMapping("")
     public ResponseEntity<POI> addPOI(@RequestBody POI poi){
         return ResponseEntity.ok(poiService.addPOI(poi));
     }
 
+    /**
+     * Retrieve all pois
+     *
+     * @return Response entity with list of all pois
+     */
     @GetMapping("")
     public ResponseEntity<List<POI>> getAllPOIs(){
         return ResponseEntity.ok(poiService.getAllPOIs());
     }
 
+    /**
+     * Retrieve a specific poi
+     *
+     * @param poiId poi pk identifier
+     * @return Response entity with poi to be found, 200 if ok, 404 if not found
+     */
     @GetMapping("/{poiId}")
     public ResponseEntity<POI> getPOI(@PathVariable Long poiId){
         return poiService.getPOIById(poiId).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
     }
 
+    /**
+     * Delete poi
+     *
+     * @param poiId poi pk identifier
+     * @return Response entity 200 if deleted ok, 404 if not found
+     */
     @DeleteMapping("/{poiId}")
     public ResponseEntity<POI> deletePOI(@PathVariable Long poiId){
         if (poiService.getPOIById(poiId).isPresent()){
@@ -47,11 +70,23 @@ public class POIController {
         return ResponseEntity.notFound().build();
     }
 
+    /**
+     * Update poi
+     *
+     * @param poi poi object with modified params
+     * @return Response entity, code -> 200 if modified ok, 404 if not found in db
+     */
     @PutMapping("")
     public ResponseEntity<POI> modifyPOI(@RequestBody POI poi){
         return poiService.modifyPOI(poi).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
     }
 
+    /**
+     * Get phone current poi
+     *
+     * @param phoneId phone pk identifier
+     * @return Resoinse entity code 200 if ok 400 otherwise
+     */
     @GetMapping("current/{phoneId}")
     public ResponseEntity getCurrentPOI(@PathVariable String phoneId){
         return poiService.getCurrennt(phoneId)

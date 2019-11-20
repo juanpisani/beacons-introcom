@@ -13,6 +13,9 @@ public class DatabaseLoader {
     @Autowired
     BeaconService beaconService;
 
+    /**
+     * Loads database with 2 Beacons
+     */
     @PostConstruct
     public void addBeacons(){
         try {

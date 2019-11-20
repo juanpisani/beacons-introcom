@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['beacon_0',['Beacon',['../classcom_1_1introcom_1_1beaconservice_1_1model_1_1_beacon.html',1,'com.introcom.beaconservice.model.Beacon'],['../classcom_1_1introcom_1_1poiservice_1_1model_1_1external_1_1_beacon.html',1,'com.introcom.poiservice.model.external.Beacon']]],
-  ['beaconclient_1',['BeaconClient',['../interfacecom_1_1introcom_1_1poiservice_1_1client_1_1_beacon_client.html',1,'com::introcom::poiservice::client']]],
-  ['beaconcontroller_2',['BeaconController',['../classcom_1_1introcom_1_1beaconservice_1_1controller_1_1_beacon_controller.html',1,'com::introcom::beaconservice::controller']]],
-  ['beaconrepository_3',['BeaconRepository',['../interfacecom_1_1introcom_1_1beaconservice_1_1repository_1_1_beacon_repository.html',1,'com::introcom::beaconservice::repository']]],
-  ['beaconservice_4',['BeaconService',['../classcom_1_1introcom_1_1beaconservice_1_1service_1_1_beacon_service.html',1,'com::introcom::beaconservice::service']]],
-  ['beaconserviceapplication_5',['BeaconServiceApplication',['../classcom_1_1introcom_1_1beaconservice_1_1_beacon_service_application.html',1,'com::introcom::beaconservice']]]
+  ['addbeacon_0',['addBeacon',['../classcom_1_1introcom_1_1beaconservice_1_1controller_1_1_beacon_controller.html#a3c5c6b2d7f6af4a1fcf1766ab2c940a6',1,'com::introcom::beaconservice::controller::BeaconController']]],
+  ['addbeacons_1',['addBeacons',['../classcom_1_1introcom_1_1beaconservice_1_1service_1_1_database_loader.html#aed7ec5f7ceb8429df97ead2345ff860d',1,'com::introcom::beaconservice::service::DatabaseLoader']]],
+  ['addpoi_2',['addPOI',['../classcom_1_1introcom_1_1poiservice_1_1controller_1_1_p_o_i_controller.html#a91f73c19042d030f3bad08ee3ffd13fe',1,'com::introcom::poiservice::controller::POIController']]]
 ];
