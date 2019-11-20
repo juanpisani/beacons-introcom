@@ -1,0 +1,73 @@
+\hypertarget{classcom_1_1introcom_1_1messagesservice_1_1controller_1_1_message_controller}{}\doxysection{com.\+introcom.\+messagesservice.\+controller.\+Message\+Controller Class Reference}
+\label{classcom_1_1introcom_1_1messagesservice_1_1controller_1_1_message_controller}\index{com.introcom.messagesservice.controller.MessageController@{com.introcom.messagesservice.controller.MessageController}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcom_1_1introcom_1_1messagesservice_1_1controller_1_1_message_controller_a5de057aed1099586cb94eed5b386109a}\label{classcom_1_1introcom_1_1messagesservice_1_1controller_1_1_message_controller_a5de057aed1099586cb94eed5b386109a}} 
+{\bfseries Message\+Controller} (\mbox{\hyperlink{classcom_1_1introcom_1_1messagesservice_1_1service_1_1_message_service}{Message\+Service}} message\+Service)
+\item 
+Response\+Entity$<$ \mbox{\hyperlink{classcom_1_1introcom_1_1messagesservice_1_1model_1_1_message}{Message}} $>$ \mbox{\hyperlink{classcom_1_1introcom_1_1messagesservice_1_1controller_1_1_message_controller_af35f2b29042fa472c2cbe4e5bbc7b412}{new\+Message}} (@Path\+Variable String uuid, @Path\+Variable String major, @Path\+Variable String minor, @Path\+Variable String phone\+Id)
+\item 
+List$<$ \mbox{\hyperlink{classcom_1_1introcom_1_1messagesservice_1_1model_1_1_message}{Message}} $>$ \mbox{\hyperlink{classcom_1_1introcom_1_1messagesservice_1_1controller_1_1_message_controller_a512f45cb44ec79701f8a114cf1cb37b1}{get\+All}} ()
+\item 
+\mbox{\hyperlink{classcom_1_1introcom_1_1messagesservice_1_1model_1_1_message}{Message}} \mbox{\hyperlink{classcom_1_1introcom_1_1messagesservice_1_1controller_1_1_message_controller_a050101ce82b5157af797c21af4d7ff95}{get\+Last\+Beacon\+For\+Phone}} (@Path\+Variable String phone\+Id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1introcom_1_1messagesservice_1_1controller_1_1_message_controller_a512f45cb44ec79701f8a114cf1cb37b1}\label{classcom_1_1introcom_1_1messagesservice_1_1controller_1_1_message_controller_a512f45cb44ec79701f8a114cf1cb37b1}} 
+\index{com.introcom.messagesservice.controller.MessageController@{com.introcom.messagesservice.controller.MessageController}!getAll@{getAll}}
+\index{getAll@{getAll}!com.introcom.messagesservice.controller.MessageController@{com.introcom.messagesservice.controller.MessageController}}
+\doxysubsubsection{\texorpdfstring{getAll()}{getAll()}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{classcom_1_1introcom_1_1messagesservice_1_1model_1_1_message}{Message}}$>$ com.\+introcom.\+messagesservice.\+controller.\+Message\+Controller.\+get\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retrieve all messages stored
+
+\begin{DoxyReturn}{Returns}
+List of all messages 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1introcom_1_1messagesservice_1_1controller_1_1_message_controller_a050101ce82b5157af797c21af4d7ff95}\label{classcom_1_1introcom_1_1messagesservice_1_1controller_1_1_message_controller_a050101ce82b5157af797c21af4d7ff95}} 
+\index{com.introcom.messagesservice.controller.MessageController@{com.introcom.messagesservice.controller.MessageController}!getLastBeaconForPhone@{getLastBeaconForPhone}}
+\index{getLastBeaconForPhone@{getLastBeaconForPhone}!com.introcom.messagesservice.controller.MessageController@{com.introcom.messagesservice.controller.MessageController}}
+\doxysubsubsection{\texorpdfstring{getLastBeaconForPhone()}{getLastBeaconForPhone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcom_1_1introcom_1_1messagesservice_1_1model_1_1_message}{Message}} com.\+introcom.\+messagesservice.\+controller.\+Message\+Controller.\+get\+Last\+Beacon\+For\+Phone (\begin{DoxyParamCaption}\item[{@Path\+Variable String}]{phone\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get last beacon recognized by a specific phone
+
+
+\begin{DoxyParams}{Parameters}
+{\em phone\+Id} & phone identifier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Message from las beacon that was read by the phone 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1introcom_1_1messagesservice_1_1controller_1_1_message_controller_af35f2b29042fa472c2cbe4e5bbc7b412}\label{classcom_1_1introcom_1_1messagesservice_1_1controller_1_1_message_controller_af35f2b29042fa472c2cbe4e5bbc7b412}} 
+\index{com.introcom.messagesservice.controller.MessageController@{com.introcom.messagesservice.controller.MessageController}!newMessage@{newMessage}}
+\index{newMessage@{newMessage}!com.introcom.messagesservice.controller.MessageController@{com.introcom.messagesservice.controller.MessageController}}
+\doxysubsubsection{\texorpdfstring{newMessage()}{newMessage()}}
+{\footnotesize\ttfamily Response\+Entity$<$\mbox{\hyperlink{classcom_1_1introcom_1_1messagesservice_1_1model_1_1_message}{Message}}$>$ com.\+introcom.\+messagesservice.\+controller.\+Message\+Controller.\+new\+Message (\begin{DoxyParamCaption}\item[{@Path\+Variable String}]{uuid,  }\item[{@Path\+Variable String}]{major,  }\item[{@Path\+Variable String}]{minor,  }\item[{@Path\+Variable String}]{phone\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Creates new Message in db
+
+Messages saved represents the event corresponding with a phone detecting a beacon.
+
+
+\begin{DoxyParams}{Parameters}
+{\em uuid} & beacon identifier corresponding to message \\
+\hline
+{\em major} & beacon identifier corresponding to message \\
+\hline
+{\em minor} & beacon identifier corresponding to message \\
+\hline
+{\em phone\+Id} & phone pk corresponding to message \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Response entity, code 200 if ok, 400 if bad request 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+messages-\/service/src/main/java/com/introcom/messagesservice/controller/Message\+Controller.\+java\end{DoxyCompactItemize}

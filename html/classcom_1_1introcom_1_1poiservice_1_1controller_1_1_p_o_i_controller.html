@@ -119,7 +119,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Response enttity with new poi </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Response entity with new poi </dd></dl>
 
 </div>
 </div>
@@ -208,6 +208,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Get phone current poi</p>
+<p>This endpoint relies on two different requests perpetrated to two other services in the platfomor. Firstly, the messages-service is asked for the last message to be sent by the specified phone Secondly, the beacon-service is asked for the beacon corresponding to that message Finally, this services looks in the database for the poi corresponding to the beacon and returns it if present.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">phoneId</td><td>phone pk identifier </td></tr>

@@ -32,7 +32,7 @@ Generate new poi
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Response enttity with new poi 
+Response entity with new poi 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classcom_1_1introcom_1_1poiservice_1_1controller_1_1_p_o_i_controller_af5171117e61400b699ba28127da0c217}\label{classcom_1_1introcom_1_1poiservice_1_1controller_1_1_p_o_i_controller_af5171117e61400b699ba28127da0c217}} 
 \index{com.introcom.poiservice.controller.POIController@{com.introcom.poiservice.controller.POIController}!deletePOI@{deletePOI}}
@@ -68,6 +68,8 @@ Response entity with list of all pois
 {\footnotesize\ttfamily Response\+Entity com.\+introcom.\+poiservice.\+controller.\+P\+O\+I\+Controller.\+get\+Current\+P\+OI (\begin{DoxyParamCaption}\item[{@Path\+Variable String}]{phone\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 Get phone current poi
+
+This endpoint relies on two different requests perpetrated to two other services in the platfomor. Firstly, the messages-\/service is asked for the last message to be sent by the specified phone Secondly, the beacon-\/service is asked for the beacon corresponding to that message Finally, this services looks in the database for the poi corresponding to the beacon and returns it if present.
 
 
 \begin{DoxyParams}{Parameters}
